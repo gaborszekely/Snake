@@ -1,0 +1,16 @@
+<div *ngIf="board$ | async as board" class="board">
+  <div *ngFor="let row of board; let rowI = index" class="row">
+    <div *ngFor="let cell of row; let cellI = index" class="cell">
+      <div class="content">
+        {{ board[rowI][cellI] }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="speed__wrapper">
+  <input type="number" #newSpeed [value]="speed" />
+  <button (click)="setSpeed(newSpeed)">Set Speed</button>
+</div>
